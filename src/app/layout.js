@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
+import TransitionProvider from "./components/TransitionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,12 +14,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="w-screen h-screen bg-white">
-          <div className="h-10 border-b text-justify border-black border-solid">
-            <Navbar />
-          </div>
-          <div className="h-[cal(100vh - 40px)] 8px-2 sm:px-4">{children}</div>
+        <div className="h-10 border-b text-justify  z-50 bg-white border-black border-solid">
+          <Navbar />
         </div>
+        <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>
   );

@@ -9,8 +9,8 @@ export default function NavLink({ link }) {
   return (
     <Link
       href={link.url}
-      className={`rounded p-1 ${
-        pathName === link.url && "bg-black text-white"
+      className={` p-1 ${
+        pathName === link.url && "border-b border-[#141414] text-[#141414]"
       }`}
     >
       {link.title}
